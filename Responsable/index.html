@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>PPOC Telde Sur</title>
+      <link href='https://ppocteldesur.github.io/Img/logo.png' rel='shortcut icon' type='image/png'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  
+  
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+</head>
+
+<script>
+(function(_0x3d4e8a,_0x39a128){var _0x259935=_0x5780,_0x3bf4b9=_0x3d4e8a();while(!![]){try{var _0xa487e1=-parseInt(_0x259935(0x175))/0x1+parseInt(_0x259935(0x16b))/0x2*(parseInt(_0x259935(0x171))/0x3)+-parseInt(_0x259935(0x179))/0x4+parseInt(_0x259935(0x16a))/0x5*(-parseInt(_0x259935(0x174))/0x6)+parseInt(_0x259935(0x173))/0x7+parseInt(_0x259935(0x16f))/0x8+parseInt(_0x259935(0x17a))/0x9*(-parseInt(_0x259935(0x172))/0xa);if(_0xa487e1===_0x39a128)break;else _0x3bf4b9['push'](_0x3bf4b9['shift']());}catch(_0x1336ba){_0x3bf4b9['push'](_0x3bf4b9['shift']());}}}(_0x43b4,0x8c7d1));function _0x5780(_0x27636a,_0x48eb36){var _0x43b434=_0x43b4();return _0x5780=function(_0x578080,_0x16713c){_0x578080=_0x578080-0x169;var _0x28743e=_0x43b434[_0x578080];return _0x28743e;},_0x5780(_0x27636a,_0x48eb36);}var server='';function cuadranteactual(){var _0x401f8b=_0x5780;location[_0x401f8b(0x16c)]=server+_0x401f8b(0x177);}function cuadranteproximo(){var _0x4096f0=_0x5780;location[_0x4096f0(0x16c)]=server+_0x4096f0(0x178);}function cerrarsicion(){var _0x44a067=_0x5780;location[_0x44a067(0x16c)]=server+_0x44a067(0x17b);}function formulario(){var _0x57bba0=_0x5780,_0x3e757b=location['hash'];location[_0x57bba0(0x16c)]=server+_0x57bba0(0x17c)+_0x3e757b;}function _0x43b4(){var _0x179a46=['getElementById','8581784KzpwTD','innerHTML','3VmMMdM','10lGVwEj','6749323JVhZUc','6iPbXTW','100362WsDULL','replace','https://drive.google.com/drive/u/2/folders/1kzKXwujlsmnvsS0I7nlg4NZaZ9aCz4qq','https://drive.google.com/drive/u/2/folders/1cGiQfgUjSxfOX0eu5UYtKrD1cEx37Mlj','274420pleLFO','20331477fDQtBW','https://ppocteldesur.github.io','Formulario','hash','764285lIKwmo','2238812gmrlQU','href','Usuarios/'];_0x43b4=function(){return _0x179a46;};return _0x43b4();}function usermaker(){var _0x5d02c9=_0x5780;location[_0x5d02c9(0x16c)]=server+_0x5d02c9(0x16d);}function informe(){location['href']=server+'Informe/';}function Start(){var _0x2fc681=_0x5780,_0x416d76=location[_0x2fc681(0x169)];_0x416d76=_0x416d76['replace']('#',''),_0x416d76=_0x416d76[_0x2fc681(0x176)]('%20','\x20'),document[_0x2fc681(0x16e)]('device')[_0x2fc681(0x170)]=_0x416d76,_0x416d76===''&&(location['href']=_0x2fc681(0x17b));}
+</script>
+
+   <body onload="Start()">    
+      <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+          <a href="" class="w3-bar-item w3-button">PPOC Telde Sur</a>
+          <div class="w3-right w3-hide-small">
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-content" style="max-width:1100px">
+        <div class="w3-row w3-padding-64" id="about">
+          <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img id="fotambia" src="../Img/logo.png" class="w3-round w3-image w3-opacity-min" alt="Imagen" width="500px" height="42px"></a>
+          </div>
+          
+          <div class="w3-col m6 w3-padding-large">
+            <h3 class="w3-center">Bienvenido/a <div id="nombre"></div></h3><br>
+            <p class="w3-center">
+                <button class="botton rojo" onclick="formulario()">FORMULARIO</button>
+            </p>
+
+            <p class="w3-center">
+                <button class="botton azul" onclick="cuadranteactual()">CUADRANTE ACTUAL</button>
+                <br><br>
+                <button class="botton azul" onclick="cuadranteproximo()">CUADRANTE PROXIMO</button>
+                
+            </p>
+          </div>
+        </div>
+  <hr>
+        </div>
+           
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168260241-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-168260241-1');
+
+              var meta = location.hash
+              responsable = meta.replace("#","");
+              responsable = responsable.replace("_"," ");
+              document.getElementById("nombre").innerHTML = responsable;
+</script>
+</body></html>

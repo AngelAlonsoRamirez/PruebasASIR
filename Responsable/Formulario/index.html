@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>PPOC Telde Sur</title>
+      <link href='https://ppocteldesur.github.io/Img/logo.png' rel='shortcut icon' type='image/png'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  
+  
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+</head>
+
+<script>
+    // Informacion para Firebase
+    function enviar() {
+      var meta = location.hash
+      responsable = meta.replace("#","");
+
+      var turno = document.getElementById('turno').value;
+      var revisitas = document.getElementById('revisitas').value;
+      var libros = document.getElementById('libros').value;
+      var tratados = document.getElementById('tratados').value;
+      var videospresentados = document.getElementById('videospresentados').value;
+      var enlacevideos = document.getElementById('enlacevideos').value;
+      var invitaciones = document.getElementById('invitaciones').value;
+      var tarjetajw = document.getElementById('tarjetajw').value;
+      var revistas = document.getElementById('revistas').value;
+      var folletos = document.getElementById('folletos').value;
+      var cursobiblico = document.getElementById('cursobiblico').value;
+      var caja = document.getElementById('caja').value;
+      var experiencia = document.getElementById('experiencia').value;
+      var conversaciones = document.getElementById('conversaciones').value;
+      var afluencia = document.getElementById('afluencia').value;
+
+
+
+      var valorFecha = document.getElementById("fecha").value;
+      
+      // Crear un objeto de fecha utilizando el valor obtenido
+      var fecha = new Date(valorFecha);
+      
+      // Obtener día, mes y año por separado
+      var fecha1 = fecha.getDate();
+      
+      var nombresMeses = [
+            "Enero", "Febrero", "Marzo", "Abril",
+            "Mayo", "Junio", "Julio", "Agosto",
+            "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+        
+      var fecha2 = nombresMeses[fecha.getMonth()];
+
+
+      var fecha3 = fecha.getFullYear();
+
+        (function(_0x3ee7dc,_0x45fb84){var _0x1873e5=_0x4070,_0x384009=_0x3ee7dc();while(!![]){try{var _0x423bd2=parseInt(_0x1873e5(0x1d7))/0x1*(-parseInt(_0x1873e5(0x1d6))/0x2)+parseInt(_0x1873e5(0x1cf))/0x3+parseInt(_0x1873e5(0x1d8))/0x4*(-parseInt(_0x1873e5(0x1d5))/0x5)+parseInt(_0x1873e5(0x1d0))/0x6+parseInt(_0x1873e5(0x1d3))/0x7*(-parseInt(_0x1873e5(0x1d4))/0x8)+parseInt(_0x1873e5(0x1d2))/0x9+parseInt(_0x1873e5(0x1d1))/0xa;if(_0x423bd2===_0x45fb84)break;else _0x384009['push'](_0x384009['shift']());}catch(_0x22719c){_0x384009['push'](_0x384009['shift']());}}}(_0x4301,0x8fccb),myDataRef=new Firebase('https://ppoc-d79c6.firebaseio.com/'+fecha3+'/'+fecha2));function _0x4070(_0x4124fc,_0x1421f6){var _0x430192=_0x4301();return _0x4070=function(_0x407085,_0x183172){_0x407085=_0x407085-0x1cf;var _0x230998=_0x430192[_0x407085];return _0x230998;},_0x4070(_0x4124fc,_0x1421f6);}function _0x4301(){var _0x247d64=['2744616RDVUbi','4141860wKXXfJ','1513500GGRZQz','8365122LQXDOB','7uvGPqi','6463664jgLOUf','95UioZJH','2KyWJDA','182051BKKHlk','233048WTxdHD'];_0x4301=function(){return _0x247d64;};return _0x4301();}
+
+        if (turno==="0") { var obligatorio = "no"}
+        if (valorFecha==="") { var obligatorio = "no"}
+
+        if (obligatorio==="no") {
+          alert("Faltan campos por rellenar.");
+        } else {
+          responsable = responsable.replace("_"," ");
+          var respuesta = confirm("Seguro que desea enviar el informe?\n\nResponsable: " + responsable + "\nFecha: " + fecha1 + " de " + fecha2 + " del " + fecha3 + "\n" + turno + "\nAfluencia: " + afluencia + "\nRevisitas: " + revisitas + "\nLibros: " + libros + "\nTratados: " + tratados + "\nFolletos: " + folletos + "\nVideos Presentados: " + videospresentados + "\nVideos Enlaces: " + enlacevideos + "\nInvitaciónes: " + invitaciones + "\nTarjetas JW: " + tarjetajw + "\nRevistas: " + revistas + "\nCursos Biblicos: " + cursobiblico + "\nConversaciones: " + conversaciones + "\nComentarios: " + caja + "\nExperiencias: " + experiencia);
+
+          if (respuesta == true) {
+            myDataRef.push( {
+            aResponsable: responsable,
+            bFecha: fecha1 + ' de ' + fecha2 + ' del ' + fecha3,
+            cTurno: turno,
+            dRevisitas: revisitas,
+            eLibros: libros,
+            fTratados: tratados,
+            gVideoPresentados: videospresentados,
+            hEnlaceVideos: enlacevideos,
+            iInvitaciones: invitaciones,
+            jTarjetasJW: tarjetajw,
+            kRevistas: revistas,
+            lFolletos: folletos,
+            mCursosBiblicos: cursobiblico,
+            nComentarios: caja,
+            pConversaciones: conversaciones,
+            qAfluencia: afluencia,
+            oExperiencias: experiencia
+          });
+        alert("¡Informe enviado en exito!");
+      } else {}
+    }
+  } 
+</script>
+
+
+   <body>    
+      <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+          <a href="" class="w3-bar-item w3-button">PPOC Telde Sur</a>
+          <div class="w3-right w3-hide-small">
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-content" style="max-width:1100px">
+        <div class="w3-row w3-padding-64" id="about">
+          <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img id="fotambia" src="https://ppocteldesur.github.io/Img/logo.png" class="w3-round w3-image w3-opacity-min" alt="Imagen" width="500px" height="42px"></a>
+          </div>
+          
+          <div class="w3-col m6 w3-padding-large">
+            <div class="w3-panel w3-red">
+              <h3>Atención!</h3>
+              <p>Los * son obligatorios.</p>
+            </div>
+
+            
+              <table class="w3-table w3-striped">
+                <tr>
+                  <th colspan="2">Formulario</th>
+                </tr>
+                <tr>
+                  <td>Fecha <obligatorio>*</obligatorio></td>
+                  <td>
+                    <input type="date" class="w3-border w3-sand" id="fecha" >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Turno <obligatorio>*</obligatorio></td>
+                    <td><select class="w3-select w3-border w3-sand" id="turno" style="width:100px">
+                      <option value="0" disabled selected></option>
+                        <option value="Turno 1">Turno 1</option> 
+                        <option value="Turno 2">Turno 2</option> 
+                        <option value="Turno 3">Turno 3</option>
+                        <option value="Turno 4">Turno 4</option> 
+                        <option value="Turno 5">Turno 5</option> 
+                        <option value="Turno 6">Turno 6</option> 
+                    </select></td>
+                </tr>
+                <tr>
+                  <td><label for="radio">Afluencia (Aproximado)</label></td>
+                  <td>
+                    <input type="range" name="rad" id="afluencia" min="0" max="100" value="0">
+                    <output name="xrad" id="vrad"></output>
+
+                  </td>
+              </tr>
+              <tr>
+                    <td>Revisitas</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="revisitas" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
+                    <td>Libros</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="libros" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
+                    <td>Tratados</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="tratados" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
+                    <td>Folletos</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="folletos" style="width:100px">
+                      <option value="0"></option>
+                      <script>
+                      for (var i = 1; i <= 30; i++) { // Max 30
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                      }
+                      </script>
+                    </select>
+                  </td>
+            </tr>
+
+            <tr>
+                  <td>Videos Presentados</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="videospresentados" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
+                </tr>
+  
+                <tr>
+                      <td>Videos Enlace</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="enlacevideos" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
+                    <td>Invitaciónes</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="invitaciones" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
+                    <td>Tarjeta JW</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="tarjetajw" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
+                </tr>
+  
+                <tr>
+                      <td>Revistas</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="revistas" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
+                </tr>
+  
+                <tr>
+                      <td>Cursos Biblicos</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="cursobiblico" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
+                </tr>
+  
+                <tr>
+                      <td>Conversaciones</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="conversaciones" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
+                </tr>
+  
+                <tr>
+                      <td>
+                        Comentarios</td>
+                    <td><textarea class="w3-border w3-sand" id="caja" cols="15"></textarea></td>
+                  </tr>
+  
+                  <tr>
+                      <td>Experiencias</td>
+                    <td>
+                      <textarea class="w3-border w3-sand" id="experiencia" cols="15"></textarea>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                      <td colspan="2">
+                        <button class="button azul" onclick="enviar()">Enviar</button>
+                      </td>
+                </tr>
+              </table>
+    </div>
+</div>
+  <hr>
+        </div>
+        
+
+        <script>
+        // Obtén referencia al elemento de rango y de salida
+        var rango = document.getElementById('afluencia');
+        var salida = document.getElementById('vrad');
+
+        // Función para actualizar la salida en tiempo real
+        function updateOutput() {
+            salida.value = rango.value;
+        }
+
+        // Asigna la función al evento 'input'
+        rango.addEventListener('input', updateOutput);
+            </script>
+            
+              
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168260241-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-168260241-1');
+            </script>
+</body></html>
